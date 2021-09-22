@@ -1,12 +1,14 @@
 ## There are two functions presented in this script: The first one is the makeCacheMatrix and the second one is the cacheSolve. ##
 
-## The first function below creates a special "matrix" object that can cache its inverse. ##
+## The first function creates a special "matrix" object that can cache its inverse. >> makeCacheMatrix ##
+## Check in console: jmatrix <- makeCacheMatrix(matrix(1:4, nrow = 2, nrow = 2)) after the script for the 1st function
 
 makeCacheMatrix <- function(x = matrix()) { 
   ## This creates a matrix ##
 }
 
-## The second function computes the inverse of the special "matrix" returned by makeCacheMatrix above. ##
+## The second function computes the inverse of the special "matrix" returned by makeCacheMatrix above. >> cacheSolve ##
+## Check in console: cacheSolve(jmatrix) ##
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
@@ -20,6 +22,7 @@ cacheSolve <- function(x, ...) {
 
 makeCacheMatrix <- function(JRD = matrix()) {
   invrsvrbl <- NULL
+  ## the inverse ##
   set1 <- function(DMSDS) {                                    ## Set the value of the matrix ##
           JRD <<- DMSDS
           invrsvrbl <<- NULL
@@ -29,6 +32,9 @@ makeCacheMatrix <- function(JRD = matrix()) {
   get_Inverse2 <- function() {invrsvrbl}                      ## Get the value of the Inverse ##
   list(set1 = set1, get1 = get1, set_Inverse2 = set_Inverse2, get_Inverse2 = get_Inverse2)
 }
+
+## jmatrix$get1() ##
+## jmatrix$get_Inverse2() ##
 
 ## 2nd function ##
 
@@ -42,6 +48,8 @@ cacheSolve <- function(JRD, ...) {
   invrsvrbl <- solve(matrix, ...) ## To compute for the inverse of a square matrix ##
   JRD$set_Inverse2(invrsvrbl)
   invrsvrbl 
+  ## cacheSolve(jmatrix) >> 2x ##
+  ## jmatrix$get_Inverse2() ##
   ## Check the results ##
-  ## Use 1:4 matrix ##
+  ## R Studio ##
 }
